@@ -4,6 +4,7 @@ import 'package:personal_website/pages/connect_with_me.dart';
 import 'package:personal_website/widgets/hello_text.dart';
 import 'package:personal_website/widgets/name_text.dart';
 import 'package:personal_website/widgets/os.dart';
+import 'dart:html' as html;
 
 void main() {
   runApp(const MyApp());
@@ -23,8 +24,8 @@ class _MyAppState extends State<MyApp> {
   ) {
     return MaterialApp(
       routes: {
-        AboutPage.routename: (context) => AboutPage(),
-        ConnectWithMe.routename: (context) => ConnectWithMe(),
+        AboutPage.routename: (context) => const AboutPage(),
+        ConnectWithMe.routename: (context) => const ConnectWithMe(),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -51,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
       onPressed: () => Navigator.pushNamed(context, routename),
       child: Text(
         title,
-        style: TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.white),
       ),
     );
   }
@@ -72,9 +73,15 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               width: 20,
             ),
-            appbarButton("EDUCATIONAL PROFILE", () {}),
-            const SizedBox(
-              width: 100,
+            FlatButton(
+              color: Colors.black,
+              onPressed: () => html.window.open(
+                  'https://drive.google.com/file/d/1hBP5PB8IZ3G4BVAZAT_RsZIic4iVOZkI/view?usp=sharing',
+                  "_blank"),
+              child: const Text(
+                "RESUME",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),
@@ -82,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: [
-          Container(
+          SizedBox(
             child: Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
