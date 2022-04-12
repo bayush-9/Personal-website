@@ -5,7 +5,7 @@ class HelloText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       // color: Colors.green,
       child: Stack(
@@ -33,7 +33,7 @@ class HelloText extends StatelessWidget {
             child: Text(
               "World;",
               style: TextStyle(
-                  color: Color.fromARGB(180, 44, 127, 21), fontSize: 115),
+                  color: Color.fromARGB(93, 44, 127, 21), fontSize: 115),
             ),
           ),
         ],
