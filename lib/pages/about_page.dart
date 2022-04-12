@@ -7,11 +7,17 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "ABOUT....",
+          style: TextStyle(fontSize: 30),
+        ),
+      ),
       backgroundColor: Colors.black,
-      body: AboutTile(),
+      body: const Center(child: AboutTile()),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pop(context),
-        child: Icon(
+        child: const Icon(
           Icons.home,
           color: Colors.black,
         ),

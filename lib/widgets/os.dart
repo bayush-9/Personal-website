@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class Group2Widget extends StatefulWidget {
+  const Group2Widget({Key? key}) : super(key: key);
+
   @override
   State<Group2Widget> createState() => _Group2WidgetState();
 }
