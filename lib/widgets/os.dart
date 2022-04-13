@@ -61,7 +61,7 @@ class _Group2WidgetState extends State<Group2Widget>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 700,
       child: Stack(
         children: <Widget>[
@@ -89,11 +89,11 @@ class _Group2WidgetState extends State<Group2Widget>
           Positioned(
             top: 20.44536209106445,
             left: 266.7360534667969,
-            child: Container(
+            child: SizedBox(
               width: 201,
               height: 143,
               child: Stack(
-                children: <Widget>[],
+                children: const <Widget>[],
               ),
             ),
           ),

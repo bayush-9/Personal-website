@@ -27,7 +27,7 @@ class NameText extends StatelessWidget {
           Positioned(
             top: 130,
             child: Text(
-              "Ayush",
+              "Ayush ",
               style: TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255), fontSize: 128),
             ),
