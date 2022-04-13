@@ -28,6 +28,7 @@ class _MyAppState extends State<MyApp> {
     BuildContext context,
   ) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         ConnectWithMe.routename: (context) => const ConnectWithMe(),
       },
@@ -95,15 +96,40 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         height: screenHeight,
       ),
-      SizedBox(
+      Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.black, Color.fromARGB(255, 255, 17, 0)],
+              begin: FractionalOffset(0.0, 3.0),
+              end: FractionalOffset(6, 3.0),
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp),
+        ),
         height: screenHeight,
         child: const AboutTile(),
       ),
-      SizedBox(
-        height: screenHeight,
+      Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.black, Color.fromARGB(255, 255, 17, 0)],
+              begin: FractionalOffset(0.0, 3.0),
+              end: FractionalOffset(6, 3.0),
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp),
+        ),
         child: const ConnectWithMe(),
       ),
-      SizedBox(height: screenHeight, child: Details()),
+      Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.black, Color.fromARGB(255, 255, 17, 0)],
+              begin: FractionalOffset(0.0, 3.0),
+              end: FractionalOffset(6, 3.0),
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp),
+        ),
+        child: const Details(),
+      ),
     ];
     return Scaffold(
       floatingActionButton: FloatingActionButton(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:html' as http;
 
 class Details extends StatelessWidget {
   const Details({Key? key}) : super(key: key);
@@ -61,6 +62,36 @@ class Details extends StatelessWidget {
                 },
                 icon: const Icon(
                   Icons.copy,
+                  color: Colors.grey,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              InkWell(
+                onTap: () {
+                  http.window.open(
+                      'https://drive.google.com/file/d/1hBP5PB8IZ3G4BVAZAT_RsZIic4iVOZkI/view?usp=sharing',
+                      '_blank');
+                },
+                child: const Text(
+                  "Resume",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 149, 194, 230),
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  http.window.open(
+                      'https://drive.google.com/file/d/1hBP5PB8IZ3G4BVAZAT_RsZIic4iVOZkI/view?usp=sharing',
+                      '_blank');
+                },
+                icon: const Icon(
+                  Icons.document_scanner,
                   color: Colors.grey,
                 ),
               ),
