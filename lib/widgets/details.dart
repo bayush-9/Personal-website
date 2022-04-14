@@ -14,8 +14,7 @@ class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
-      // decoration: const BoxDecoration(color: Colors.green),
+      height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -73,7 +72,7 @@ class Details extends StatelessWidget {
               InkWell(
                 onTap: () {
                   http.window.open(
-                      'https://drive.google.com/file/d/1hBP5PB8IZ3G4BVAZAT_RsZIic4iVOZkI/view?usp=sharing',
+                      'https://drive.google.com/file/d/1zIJvDY44OK2ZVGxaLYuyei71Y_KH6zz2/view?usp=sharing',
                       '_blank');
                 },
                 child: const Text(
@@ -87,7 +86,7 @@ class Details extends StatelessWidget {
               IconButton(
                 onPressed: () {
                   http.window.open(
-                      'https://drive.google.com/file/d/1hBP5PB8IZ3G4BVAZAT_RsZIic4iVOZkI/view?usp=sharing',
+                      'https://drive.google.com/file/d/1zIJvDY44OK2ZVGxaLYuyei71Y_KH6zz2/view?usp=sharing',
                       '_blank');
                 },
                 icon: const Icon(

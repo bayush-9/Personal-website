@@ -8,6 +8,7 @@ import 'package:personal_website/widgets/hello_text.dart';
 import 'package:personal_website/widgets/name_text.dart';
 import 'package:personal_website/widgets/os.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:flutter/foundation.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         ConnectWithMe.routename: (context) => const ConnectWithMe(),
       },
-      title: 'Flutter Demo',
+      title: 'Ayush Bharsakle',
       theme: ThemeData(
         backgroundColor: const Color.fromARGB(22, 0, 0, 0),
         appBarTheme: const AppBarTheme(color: Colors.black),
@@ -67,6 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final isWebMobile = kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.iOS ||
+            defaultTargetPlatform == TargetPlatform.android);
     double screenHeight = MediaQuery.of(context).size.height;
     List<Widget> list = [
       Container(
@@ -78,21 +82,19 @@ class _MyHomePageState extends State<MyHomePage> {
               stops: [0.0, 1.0],
               tileMode: TileMode.clamp),
         ),
-        child: Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const Expanded(child: Group2Widget()),
-              Expanded(
-                child: ListView(
-                  children: const [
-                    HelloText(),
-                    NameText(),
-                  ],
-                ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            const Expanded(child: Group2Widget()),
+            Expanded(
+              child: ListView(
+                children: const [
+                  HelloText(),
+                  NameText(),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
         height: screenHeight,
       ),
@@ -132,60 +134,32 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     ];
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          final nextIndex = controller.selectedItem + 1;
-          controller.animateToItem(nextIndex,
-              duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-        },
-        child: const Icon(Icons.downhill_skiing),
-      ),
       backgroundColor: Colors.black,
-      // appBar: AppBar(
-      //   title: Row(
-      //     mainAxisAlignment: MainAxisAlignment.end,
-      //     children: [
-      //       InkWell(
-      //           onTap: () => scrollToItem(),
-      //           child: appbarButton("ABOUT", )),
-      //       const SizedBox(
-      //         width: 20,
-      //       ),
-      //       appbarButton("CONNECT WITH ME", connectWithMekey),
-      //       const SizedBox(
-      //         width: 20,
-      //       ),
-      //       FlatButton(
-      //         color: Colors.black,
-      //         onPressed: () => html.window.open(
-      //             'https://drive.google.com/file/d/1hBP5PB8IZ3G4BVAZAT_RsZIic4iVOZkI/view?usp=sharing',
-      //             "_blank"),
-      //         child: const Text(
-      //           "RESUME",
-      //           style: TextStyle(color: Colors.white),
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      //   backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-      // ),
-      body: AnimationLimiter(
-        child: ListView.builder(
-          itemCount: list.length,
-          itemBuilder: (BuildContext context, int index) {
-            return AnimationConfiguration.staggeredList(
-              position: index,
-              duration: const Duration(milliseconds: 1000),
-              child: SlideAnimation(
-                verticalOffset: 50.0,
-                child: FadeInAnimation(
-                  child: list[index],
-                ),
+      body: isWebMobile
+          ? ListView(children: const [
+              Group2Widget(),
+              Text(
+                "The mobile version in currently under development. Please open it on the desktop.",
+                style: TextStyle(color: Colors.white),
+              )
+            ])
+          : AnimationLimiter(
+              child: ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return AnimationConfiguration.staggeredList(
+                    position: index,
+                    duration: const Duration(milliseconds: 1000),
+                    child: SlideAnimation(
+                      verticalOffset: 50.0,
+                      child: FadeInAnimation(
+                        child: list[index],
+                      ),
+                    ),
+                  );
+                },
               ),
-            );
-          },
-        ),
-      ),
+            ),
     );
   }
 }

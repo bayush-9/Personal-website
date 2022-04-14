@@ -33,7 +33,7 @@ class AboutTile extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      "Hi! And welcome to my e-Portfolio. My name is Ayush Anil Bharsakle. I am a Flutter developer, having worked or at least dabbled in Mobile application development focusing on Flutter SDK. ",
+                      "Hi! and welcome to my e-Portfolio. My name is Ayush Anil Bharsakle. I am a Flutter developer, having built a lot of real world mobile apps. Currently I am exploring the web version of flutter. I found flutter SDK different from others as you can build an android app, an iOS app and a website through the same codebase ! I love solving puzzles and competitive programming keeps me busy :). ",
                       style: TextStyle(color: Colors.white, fontSize: 30),
                     ),
                   ),
