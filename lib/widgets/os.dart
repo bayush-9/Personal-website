@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -61,13 +62,17 @@ class _Group2WidgetState extends State<Group2Widget>
 
   @override
   Widget build(BuildContext context) {
+    final screeWidth = MediaQuery.of(context).size.width;
+    final isWebMobile = kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.iOS ||
+            defaultTargetPlatform == TargetPlatform.android);
     return SizedBox(
       height: 700,
       child: Stack(
         children: <Widget>[
           positionWidget(
             top: 40,
-            left: 230,
+            left: isWebMobile ? screeWidth / 3 : 230,
             width: 148.82745361328125,
             height: 147.93898010253906,
             imagePath: 'flutter_intro-modified.png',
@@ -81,7 +86,7 @@ class _Group2WidgetState extends State<Group2Widget>
           ),
           positionWidget(
             top: 300,
-            left: 350.7360534667969,
+            left: isWebMobile ? screeWidth / 2 : 350,
             width: 201,
             height: 143,
             imagePath: 'Androidlogo201420191.png',
@@ -105,7 +110,7 @@ class _Group2WidgetState extends State<Group2Widget>
               imagePath: 'fireblack.jpg'),
           positionWidget(
               top: 500.07244873046875,
-              left: 350.99998474121094,
+              left: isWebMobile ? screeWidth / 2 : 350.99998474121094,
               width: 141,
               height: 126,
               imagePath: 'Ce5e0bb316b94d889bca7d237fe725a8cover1-modified.png'),
