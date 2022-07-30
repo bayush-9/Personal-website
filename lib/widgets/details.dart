@@ -70,7 +70,7 @@ class Details extends StatelessWidget {
           InkWell(
             onTap: () {
               http.window.open(
-                  'https://drive.google.com/file/d/1zIJvDY44OK2ZVGxaLYuyei71Y_KH6zz2/view?usp=sharing',
+                  'https://drive.google.com/file/d/1CLv0aRJgwh1tJ_WX-axkCn508Xqp_H5m/view?usp=sharing',
                   '_blank');
             },
             child: const Text(
@@ -84,7 +84,7 @@ class Details extends StatelessWidget {
           IconButton(
             onPressed: () {
               http.window.open(
-                  'https://drive.google.com/file/d/1zIJvDY44OK2ZVGxaLYuyei71Y_KH6zz2/view?usp=sharing',
+                  'https://drive.google.com/file/d/1CLv0aRJgwh1tJ_WX-axkCn508Xqp_H5m/view?usp=sharing',
                   '_blank');
             },
             icon: const Icon(
